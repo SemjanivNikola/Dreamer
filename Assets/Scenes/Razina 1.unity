@@ -3262,7 +3262,7 @@ GameObject:
   - component: {fileID: 202246664}
   - component: {fileID: 202246666}
   - component: {fileID: 202246665}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spikes_path (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3649,7 +3649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa4df2ce7e0f9c4aa76ccd53eae2394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 150
+  m_JumpForce: 180
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -3691,7 +3691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 211216086}
   animator: {fileID: 211216085}
-  runSpeed: 50
+  runSpeed: 65
 --- !u!58 &211216088
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3705,9 +3705,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: -2.11}
+  m_Offset: {x: 0.100000024, y: -0.9526191}
   serializedVersion: 2
-  m_Radius: 1.45927
+  m_Radius: 0.30188894
 --- !u!61 &211216089
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3721,18 +3721,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2487843, y: 0.46209443}
+  m_Offset: {x: 0.10811591, y: 0.24327672}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.5, y: 7.507324}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 7.5, y: 7.507324}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.490148, y: 4.356387}
+  m_Size: {x: 0.86464596, y: 1.3242002}
   m_EdgeRadius: 0
 --- !u!50 &211216090
 Rigidbody2D:
@@ -3795,7 +3795,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -2826789636026509236, guid: d91b75588c8591c44ba039219f5d75a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1377ae9fcfd400141b6b1a8edb1ea455, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3814,8 +3814,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211216084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.04, y: -1.54, z: 2}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: 2.9, y: -5.85, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 900885782}
   - {fileID: 1035555053}
@@ -5309,6 +5309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315618664}
   - component: {fileID: 315618665}
+  - component: {fileID: 315618666}
   m_Layer: 3
   m_Name: grass (3)
   m_TagString: Untagged
@@ -5381,6 +5382,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &315618666
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315618663}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.9570714}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 5.94}
+    newSize: {x: 20.48, y: 5.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20.48, y: 2.0258567}
+  m_EdgeRadius: 0
 --- !u!1 &332259633
 GameObject:
   m_ObjectHideFlags: 0
@@ -8408,7 +8435,7 @@ GameObject:
   - component: {fileID: 472899280}
   - component: {fileID: 472899282}
   - component: {fileID: 472899281}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spikes_path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9271,7 +9298,7 @@ GameObject:
   - component: {fileID: 533120480}
   - component: {fileID: 533120482}
   - component: {fileID: 533120481}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spikes_path (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13201,7 +13228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900885781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.26, z: 0}
+  m_LocalPosition: {x: 0, y: 0.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 211216092}
@@ -14855,7 +14882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 999689927}
   - component: {fileID: 999689928}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rock_path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15185,7 +15212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1022776589}
   - component: {fileID: 1022776590}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15365,7 +15392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035555052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.62, z: 0}
+  m_LocalPosition: {x: 0, y: -1.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 211216092}
@@ -16915,7 +16942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138559989}
   - component: {fileID: 1138559990}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18885,6 +18912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1274784517}
   - component: {fileID: 1274784518}
+  - component: {fileID: 1274784519}
   m_Layer: 3
   m_Name: grass
   m_TagString: Untagged
@@ -18957,6 +18985,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1274784519
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274784516}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.974089}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 5.94}
+    newSize: {x: 20.48, y: 5.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20.48, y: 2.025857}
+  m_EdgeRadius: 0
 --- !u!1 &1275503596
 GameObject:
   m_ObjectHideFlags: 0
@@ -23269,7 +23323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1545522194}
   - component: {fileID: 1545522195}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23789,7 +23843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1616959687}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
