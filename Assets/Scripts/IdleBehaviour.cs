@@ -15,7 +15,7 @@ public class IdleBehaviour : StateMachineBehaviour
     {
         if (PlayerCombat.instance.isAttacking)
         {
-            PlayerCombat.instance.animator.SetTrigger("NormalAttack");
+            PlayerCombat.instance.animator.Play("Idle To Normal Attack");
         }
     }
 

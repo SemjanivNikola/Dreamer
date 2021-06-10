@@ -23,15 +23,14 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("NormalAttack") && !isAttacking)
-        {
-            Attack();
-        }
-        
+        Attack();        
     }
 
     void Attack()
     {
-        isAttacking = true;
+        if (Input.GetButtonDown("NormalAttack") && !isAttacking)
+        {
+            isAttacking = true;
+        }
     }
 }

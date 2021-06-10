@@ -47,15 +47,25 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ParallaxLayer.cs" />
+     <Compile Include="Assets\Scripts\AttackThreeBehaviour.cs" />
+     <Compile Include="Assets\Scripts\PlayerCombat.cs" />
+     <Compile Include="Assets\Scripts\ParallaxCamera.cs" />
      <Compile Include="Assets\Scripts\SceneController.cs" />
+     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\AttackOneBehaviour.cs" />
+     <Compile Include="Assets\Scripts\IdleBehaviour.cs" />
      <Compile Include="Assets\Scripts\Trapp.cs" />
      <Compile Include="Assets\Scripts\AudioController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\AttackTwoBehaviour.cs" />
+     <Compile Include="Assets\Scripts\NextLevelDoors.cs" />
+     <Compile Include="Assets\Scripts\SystemController.cs" />
      <Compile Include="Assets\Scripts\Collectables.cs" />
-     <Compile Include="Assets\Scripts\CameraController2D.cs" />
      <Compile Include="Assets\Scripts\BGScroller.cs" />
+     <Compile Include="Assets\Scripts\PlayerItems.cs" />
      <Compile Include="Assets\Scripts\Damage.cs" />
      <None Include="Assets\Sprites\Environment\Shader\NormalMappedSprite-Animated.shader" />
      <None Include="Assets\Sprites\Environment\Shader\NormalMappedTileAnimated.shader" />
@@ -685,6 +695,12 @@
  </Reference>
  <Reference Include="Unity.2D.IK.Runtime">
  <HintPath>F:/GitHub Repo/Dreamer/DreamLand/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>F:/GitHub Repo/Dreamer/DreamLand/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>F:/GitHub Repo/Dreamer/DreamLand/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Animation.Triangle.Runtime">
  <HintPath>F:/GitHub Repo/Dreamer/DreamLand/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>

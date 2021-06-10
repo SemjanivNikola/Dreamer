@@ -19,6 +19,14 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+	[Header("Wall Jumnp")]
+	public float wallJumpTime = 0.2f;
+	public float wallSlideSpeed = 0.3f;
+	public float wallDistance = 0.55f;
+	bool isWallSliding = false;
+	RaycastHit2D WallCheckHit;
+	float jumpTime;
+
 	[Header("Events")]
 	[Space]
 
@@ -58,6 +66,32 @@ public class CharacterController2D : MonoBehaviour
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
+		}
+
+		// Checking weather the Player is facing right or left and with that is he touching a wall
+		if (m_FacingRight)
+		{
+			WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(wallDistance, 0), wallDistance, m_WhatIsGround);
+		} else {
+			WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, m_WhatIsGround);
+		}
+
+		// If the Player is touching a wall on ground or in air this enables him to slide down slowly
+		if (WallCheckHit && !m_Grounded)
+		{
+			isWallSliding = true;
+			jumpTime = Time.time + wallJumpTime;
+		}
+		// If time available for jump is passed we simply slide down
+		else if (jumpTime < Time.time)
+		{
+			isWallSliding = false;
+		}
+
+		// Enabling the Player to wall jump
+		if (isWallSliding)
+		{
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, Mathf.Clamp(m_Rigidbody2D.velocity.y, wallSlideSpeed, float.MaxValue));
 		}
 	}
 
@@ -125,7 +159,7 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (m_Grounded && jump)
+		if (m_Grounded && jump || isWallSliding && jump)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;

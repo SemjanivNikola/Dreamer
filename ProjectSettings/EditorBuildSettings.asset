@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Loading.unity
-    guid: 5cb409020ce53484d85eb55a203b0bfd
-  - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Zone 1.unity
-    guid: 59b97df3bee9cb34ca2b33c4c7008ece
+    path: Assets/Scenes/Razina 1.unity
+    guid: ba56000e60505814a83643a0640a4d37
+  - enabled: 1
+    path: Assets/Scenes/Razina 2.unity
+    guid: 88c8d111a8a060946bf39cd515300095
+  - enabled: 1
+    path: Assets/Scenes/Razina 3.unity
+    guid: c1986f0c21f3ad54cb314590c2f2dbb3
   m_configObjects: {}
