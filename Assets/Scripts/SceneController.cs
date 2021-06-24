@@ -1,22 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public GameObject loadingScreen;
+    private GameObject loadingScreen;
     void Start()
     {
-        loadingScreen.active = false;
+        loadingScreen = transform.Find("Loading").gameObject;
+        loadingScreen.SetActive(false);
     }
     public void SceneLoad(string name)
     {
-        loadingScreen.active = true;
+        loadingScreen.SetActive(true);
         StartCoroutine(LoadAsynchronously(name));
     }
     IEnumerator LoadAsynchronously(string name)
     {
+        yield return new WaitForSeconds(4);
         AsyncOperation operation = SceneManager.LoadSceneAsync(name);
 
         while (!operation.isDone)
@@ -25,4 +27,12 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+                EditorApplication.isPlaying = false;
+        #else
+		        Application.Quit();
+        #endif
+    }
 }

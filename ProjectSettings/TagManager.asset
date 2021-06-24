@@ -14,12 +14,12 @@ TagManager:
   - UI
   - Player
   - Enemies
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Obstacles
+  - Midground
+  - Background
+  - Sky
+  - Obstacles
+  - Foreground
   - 
   - 
   - 
@@ -41,4 +41,31 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 2092706249
+    locked: 0
+  - name: Background
+    uniqueID: 769889621
+    locked: 0
+  - name: Midground
+    uniqueID: 1932098821
+    locked: 0
+  - name: Path
+    uniqueID: 1404268837
+    locked: 0
+  - name: Obstacles
+    uniqueID: 793720809
+    locked: 0
+  - name: Interactive objects
+    uniqueID: 3182993243
+    locked: 0
+  - name: Living things
+    uniqueID: 3957929021
+    locked: 0
+  - name: Foreground
+    uniqueID: 947426661
+    locked: 0
+  - name: UI
+    uniqueID: 1398081883
     locked: 0
