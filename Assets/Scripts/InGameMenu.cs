@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -5,28 +6,20 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class MenuController : MonoBehaviour
+public class InGameMenu : MonoBehaviour
 {
-    public GameObject MainMenu;
     public GameObject OptionsMenu;
     public GameObject GeneralCanvas;
     public GameObject ControlCanvas;
     public AudioMixer AudioVolume;
     public Dropdown resDropdown;
 
+    private bool isActive;
     Resolution[] resolutions;
-    public Button ContinueButton;
-    string path;
 
     private void Start()
     {
-        path = Application.persistentDataPath + "/dreamland.save";
-        if (!File.Exists(path))
-        {
-            ContinueButton.interactable = false;
-            ContinueButton.GetComponent<Image>().color = new Color32(255, 255, 255, 120);
-        }
-
+        isActive = false;
         resolutions = Screen.resolutions;
         resDropdown.ClearOptions();
 
@@ -39,7 +32,7 @@ public class MenuController : MonoBehaviour
             string option = r.width + "x" + r.height;
             options.Add(option);
 
-            if(r.width == Screen.currentResolution.width && r.height == Screen.currentResolution.height)
+            if (r.width == Screen.currentResolution.width && r.height == Screen.currentResolution.height)
             {
                 curResolution = i;
             }
@@ -49,20 +42,28 @@ public class MenuController : MonoBehaviour
         resDropdown.AddOptions(options);
         resDropdown.value = curResolution;
         resDropdown.RefreshShownValue();
+    }
 
-        
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isActive)
+            {
+                OptionsMenu.SetActive(false);
+                isActive = false;
+            }
+            else
+            {
+                OptionsMenu.SetActive(true);
+                isActive = true;
+            }
+        }
     }
 
     public void OnOptionsClickX()
     {
         OptionsMenu.SetActive(false);
-        MainMenu.SetActive(true);
-    }
-
-    public void OnMenuClickOptions()
-    {
-        OptionsMenu.SetActive(true);
-        MainMenu.SetActive(false);
     }
 
     public void OnControlsClick()
@@ -76,8 +77,7 @@ public class MenuController : MonoBehaviour
         GeneralCanvas.SetActive(true);
     }
 
-
-    public void SetVolume (float volume)
+    public void SetVolume(float volume)
     {
         AudioVolume.SetFloat("MainVolume", volume);
     }
@@ -96,10 +96,12 @@ public class MenuController : MonoBehaviour
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
     }
 
-    public void DeleteSave()
+    public void SaveLevel(string sceneName)
     {
-        File.Delete(path);
-        ContinueButton.interactable = false;
-        ContinueButton.GetComponent<Image>().color = new Color32(255, 255, 255, 120);
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/dreamland.save";
+        FileStream stream = new FileStream(path, FileMode.Create);
+        formatter.Serialize(stream, sceneName);
+        stream.Close();
     }
 }

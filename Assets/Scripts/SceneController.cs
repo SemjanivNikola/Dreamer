@@ -1,4 +1,6 @@
 using System.Collections;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,5 +36,17 @@ public class SceneController : MonoBehaviour
         #else
 		        Application.Quit();
         #endif
+    }
+
+    public void LoadSaved()
+    {
+        string path = Application.persistentDataPath + "/dreamland.save";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+            string sceneName = formatter.Deserialize(stream) as string;
+            stream.Close();
+        }
     }
 }
