@@ -20,7 +20,7 @@ public class SceneController : MonoBehaviour
     }
     IEnumerator LoadAsynchronously(string name)
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         AsyncOperation operation = SceneManager.LoadSceneAsync(name);
 
         while (!operation.isDone)
@@ -47,6 +47,7 @@ public class SceneController : MonoBehaviour
             FileStream stream = new FileStream(path, FileMode.Open);
             string sceneName = formatter.Deserialize(stream) as string;
             stream.Close();
+            SceneLoad(sceneName);
         }
     }
 }
